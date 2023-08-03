@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1p | grep -E '/$|^[0-9A-Za-z]' | sort | tr '\n' ',' && echo
+ls -ap1 | grep -v '^\./$' | sort -d
