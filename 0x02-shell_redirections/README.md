@@ -6,6 +6,8 @@ Explanation:
 - `echo "Hello, World"`: The `echo` command is used to display the specified text. In this case, it displays "Hello, World".
 - The script terminates, and the output "Hello, World" is displayed on the terminal.
 
+---
+
 **Task 1: Confused Smiley (1-confused_smiley)**
 This script is a simple example of a shell script that uses the `echo` command to display a text representation of a confused smiley face.
 
@@ -15,7 +17,7 @@ Explanation:
 
 ---
 
-**Task 2: Display the Content of `/etc/passwd`**
+**Task 2: Lets display a file(2-hellofile)**
 
 This script displays the content of the `/etc/passwd` file using the `cat` command. It follows the requirements for a two-line script and includes the necessary shebang line.
 
@@ -28,7 +30,7 @@ To run the script, save it to a file (e.g., `display_passwd.sh`), make it execut
 
 ---
 
-**Task 3: Display the First 10 Lines of `/etc/passwd`**
+**Task 3: What about 2?(3-twofiles)**
 
 This script displays the first 10 lines of the `/etc/passwd` file using the `head` command. It follows the requirements for a two-line script and includes the necessary shebang line.
 
@@ -41,7 +43,7 @@ To run the script, save it to a file (e.g., `display_first_lines.sh`), make it e
 
 ---
 
-**Task 4: Display the Last 10 Lines of `/etc/passwd`**
+**Task 4:  Last lines of a file(4-lastlines)**
 
 This script displays the last 10 lines of the `/etc/passwd` file using the `tail` command. It follows the requirements for a two-line script and includes the necessary shebang line.
 
@@ -54,7 +56,25 @@ To run the script, save it to a file (e.g., `display_last_lines.sh`), make it ex
 
 ---
 
-**Task 6: Display the Third Line of the File `iacta`**
+**Task 5: I'd prefer the first ones actually(5-firstlines)**
+
+This shell script displays the first 10 lines of the `/etc/passwd` file using the `head` command. It adheres to the specified requirements for a two-line script and includes the necessary shebang line.
+
+```bash
+#!/bin/bash
+head -n 10 /etc/passwd
+```
+
+To run the script, follow these steps:
+1. Save the script to a file (e.g., `display_first_10_lines.sh`).
+2. Make the script executable with the command: `chmod +x display_first_10_lines.sh`.
+3. Execute the script with: `./display_first_10_lines.sh`.
+
+The script will output the first 10 lines of the `/etc/passwd` file.
+
+---
+
+**Task 6: Line#2(6-third_line)**
 
 This script displays the third line of the file named `iacta` using the `head` and `tail` commands in combination. It follows the requirements for a two-line script and includes the necessary shebang line.
 
@@ -67,11 +87,7 @@ To run the script, save it to a file (e.g., `display_third_line.sh`), make it ex
 
 ---
 
-Certainly! Here's a summary you can include in your README for the task:
-
----
-
-**Task 7: Creating a File with Complex Filename**
+**Task 7:  It is a good file that cuts iron without making a noise(7-file)**
 
 This script creates a file named `*\\'"Best School"\'\\*$?*****:)` containing the text "Best School" followed by a newline. The script uses a combination of escape sequences to handle special characters and create the unique filename. The provided Bash script accomplishes this as follows:
 
