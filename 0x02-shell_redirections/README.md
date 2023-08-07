@@ -104,3 +104,20 @@ echo "Best School" > \\\*\\\\"'\"Best School\"\\'"\\\\\*\$\\\?\\\*\\\*\\\*\\\*\\
 To run the script, save it to a file (e.g., `create_file.sh`), make it executable with `chmod +x create_file.sh`, and then execute it with `./create_file.sh`. The resulting file will be created in the same directory where the script is located.
 
 ---
+
+**Task 8: Save current state of directory(8-cwd_state)**
+
+```bash
+#!/bin/bash
+ls -la > ls_cwd_content
+```
+
+This script uses the `ls -la` command to list the content of the current directory in a detailed format, and then redirects the output to a file named `ls_cwd_content`. If the file already exists, the script will overwrite it; otherwise, it will create the file.
+
+To run the script:
+
+1. Save the script to a file (e.g., `save_ls_content.sh`).
+2. Make the script executable with the command: `chmod +x save_ls_content.sh`.
+3. Execute the script with: `./save_ls_content.sh`.
+
+The output of the `ls -la` command will be saved in the `ls_cwd_content` file in the same directory where the script is located.
