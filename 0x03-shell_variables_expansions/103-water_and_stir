@@ -1,2 +1,2 @@
 #!/bin/bash
-result=$(echo "ibase=$WATER;obase=$STIR;$WATER + $STIR" | bc); echo "ibase=$STIR;obase=$BESTCHOL;$result" | bc
+echo "obase=$BESTCHOL;ibase=$STIR;$STIR+$WATER"|bc
