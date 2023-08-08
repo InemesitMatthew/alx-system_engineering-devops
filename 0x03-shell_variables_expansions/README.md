@@ -153,3 +153,102 @@ echo $(($BREATH ** $LOVE))
 **Explanation:**
 This script calculates the result of raising the value stored in the environment variable `BREATH` to the power of the value stored in the environment variable `LOVE`. The `**` operator represents exponentiation, and the result is displayed using the `echo` command.
 
+---
+
+### Task 11: There are 10 Types of People in the World -- Those Who Understand Binary, and Those Who Don't
+**File:** `11-binary_to_decimal`
+
+**Code:**
+```bash
+#!/bin/bash
+echo $((2#$BINARY))
+```
+
+**Explanation:**
+This script converts a number from base 2 (binary) to base 10 (decimal). The value stored in the environment variable `BINARY` is treated as a binary number and is converted using the arithmetic expansion `$(( ... ))`. The result is displayed in base 10.
+
+---
+
+### Task 12: Combination
+**File:** `12-combinations`
+
+**Code:**
+```bash
+#!/bin/bash
+for i in {a..z}{a..z}; do [ "$i" != "oo" ] && echo "$i"; done
+```
+
+**Explanation:**
+This script uses a single-line loop to generate all possible combinations of two letters (lowercase, from a to z) except "oo." The combinations are printed one per line.
+
+---
+
+### Task 13: Floats
+**File:** `13-print_float`
+
+**Code:**
+```bash
+#!/bin/bash
+printf "%.2f\n" $NUM
+```
+
+**Explanation:**
+In this task, a number with two decimal places is printed. The value is taken from the environment variable `NUM`, and the `printf` command is used with the format specifier `"%.2f"` to ensure that the number is displayed with exactly two decimal places.
+
+---
+
+### Task 14: Decimal to Hexadecimal
+**File:** `100-decimal_to_hexadecimal`
+
+**Code:**
+```bash
+#!/bin/bash
+echo "obase=16; $DECIMAL" | bc
+```
+
+**Explanation:**
+This script converts a number from base 10 (decimal) to base 16 (hexadecimal). The value stored in the environment variable `DECIMAL` is passed to the `bc` (basic calculator) command using the `obase=16;` prefix. The result is displayed in base 16.
+
+---
+
+### Task 15: Everyone is a Proponent of Strong Encryption
+**File:** `101-rot13`
+
+**Code:**
+```bash
+#!/bin/bash
+echo "$1" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
+
+**Explanation:**
+This script performs ROT13 encryption and decryption on text input. The input text is passed as a command-line argument to the script. The `tr` command is used to perform the ROT13 transformation on alphabetic characters while leaving non-alphabetic characters unchanged.
+
+---
+
+### Task 16: The Eggs of the Brood Need to Be an Odd Number
+**File:** `102-odd`
+
+**Code:**
+```bash
+#!/bin/bash
+sed -n 'p;n' $1
+```
+
+**Explanation:**
+This script prints every other line from the input file. It uses the `sed` command to achieve this. The `-n` flag suppresses automatic printing, and the `p;n` command prints the current line and moves to the next line, effectively printing every other line.
+
+---
+
+### Task 17: I'm an Instant Star. Just Add Water and Stir.
+**File:** `103-water_and_stir`
+
+**Code:**
+```bash
+#!/bin/bash
+result=$(echo "ibase=$WATER;obase=$STIR;$WATER + $STIR" | bc); echo "ibase=$STIR;obase=$BESTCHOL;$result" | bc
+```
+
+**Explanation:**
+In this script, two calculations are performed in a single line. First, the sum of `WATER` and `STIR` is calculated in base `STIR`. Then, the result is converted to base `BESTCHOL` using the `bc` (basic calculator) command. The entire calculation and conversion are done in one line.
+
+
