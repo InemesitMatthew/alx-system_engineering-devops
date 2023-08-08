@@ -84,3 +84,72 @@ set | grep -E '^[a-zA-Z_]+='
 In this task, a script is created to list all local variables, environment variables, and functions. The `set` command is used to display all variables and functions. The output is then filtered using `grep` to display lines that match the pattern of valid variable names (starting with letters or underscores and followed by letters, digits, or underscores).
 
 ---
+
+### Task 6: Local Variable
+**File:** `6-create_local_variable`
+
+**Code:**
+```bash
+#!/bin/bash
+BEST="School"
+```
+
+**Explanation:**
+In this task, a script is created to define a new local variable named `BEST` with the value `School`. The script assigns the value `School` to the local variable `BEST`.
+
+---
+
+### Task 7: Global Variable
+**File:** `7-create_global_variable`
+
+**Code:**
+```bash
+#!/bin/bash
+export BEST="School"
+```
+
+**Explanation:**
+In this task, a script is created to define a new global variable named `BEST` with the value `School`. The `export` command is used to make the variable `BEST` available to child processes as well.
+
+---
+
+### Task 8: Every Addition to True Knowledge is an Addition to Human Power
+**File:** `8-true_knowledge`
+
+**Code:**
+```bash
+#!/bin/bash
+echo $((128 + $TRUEKNOWLEDGE))
+```
+
+**Explanation:**
+In this task, a script is created to print the result of adding 128 to the value stored in the environment variable `TRUEKNOWLEDGE`. The arithmetic expansion `$(( ... ))` is used to perform the addition, and the result is echoed to the terminal.
+
+---
+
+### Task 9: Divide and Rule
+**File:** `9-divide_and_rule`
+
+**Code:**
+```bash
+#!/bin/bash
+echo $(($POWER / $DIVIDE))
+```
+
+**Explanation:**
+This script calculates the result of dividing the value stored in the environment variable `POWER` by the value stored in the environment variable `DIVIDE`. The arithmetic expansion `$(( ... ))` is used for the division, and the result is displayed using the `echo` command.
+
+---
+
+### Task 10: Love is Anterior to Life, Posterior to Death, Initial of Creation, and the Exponent of Breath
+**File:** `10-love_exponent_breath`
+
+**Code:**
+```bash
+#!/bin/bash
+echo $(($BREATH ** $LOVE))
+```
+
+**Explanation:**
+This script calculates the result of raising the value stored in the environment variable `BREATH` to the power of the value stored in the environment variable `LOVE`. The `**` operator represents exponentiation, and the result is displayed using the `echo` command.
+
