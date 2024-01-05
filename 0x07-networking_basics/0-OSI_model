@@ -2,7 +2,7 @@
 # This script provides an overview of the OSI model and its organization.
 
 # Explanation of the OSI model
-echo "The OSI (Open Systems Interconnection) model is a conceptual framework for characterizing the communication functions of a telecommunication system."
+echo "2"
 
 # Organization of the OSI model
-echo "It is organized from the lowest level (Layer 1) to the highest level (Layer 7), each layer serving specific functions."
+echo "2"
