@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays listening ports with corresponding PID and program names.
+
+# Display active internet connections with listening sockets
+sudo netstat -tulnp | awk '/^Active/{p=1;next}p'
+
+# Display active UNIX domain sockets
+sudo netstat -xl | awk '/^Active/{p=1;next}p'
