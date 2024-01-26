@@ -1,28 +1,5 @@
 ### Whiteboard Diagram:
 
-```
-+------------------+             +------------------+
-|   User's        |             |    DNS Server    |
-|   Computer      |             |                  |
-|   (Browser)     |             |   www A 8.8.8.8  |
-+--------|---------+             +------------------+
-         |
-         | www.foobar.com
-         |
-+------------------+             +------------------+
-|    Web Server    |             |   Application    |
-|    (Nginx)       |             |    Server        |
-|   www.foobar.com |             |                  |
-|   /var/www/html  |             |    Your Code     |
-|                  |             |                  |
-+------------------+             +------------------+
-         |
-         |         +------------------+
-         |         |   Database       |
-         +-------->|    (MySQL)       |
-                   |                  |
-                   +------------------+
-```
 The Diagram Link: https://imgur.com/p8VKnas
 
 ### Explanations:

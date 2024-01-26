@@ -1,29 +1,5 @@
 ### Whiteboard Diagram:
 
-```
-+------------------+     +------------------+     +------------------+
-|   User's        |     |   Load Balancer  |     |   DNS Server    |
-|   Computer      |     |    (HAProxy)     |     |                  |
-|   (Browser)     |     |                  |     |   www A 8.8.8.8  |
-+--------|---------+     +--------|---------+     +------------------+
-         |                        |
-         | www.foobar.com          | www.foobar.com
-         |                        |
-+------------------+     +------------------+     +------------------+
-|    Web Server    |     |   Application    |     |    Database      |
-|    (Nginx)       |     |    Server        |     |     (MySQL)       |
-|   www.foobar.com |     |                  |     |                  |
-|   /var/www/html  |     |    Your Code     |     |                  |
-+------------------+     +------------------+     +------------------+
-         |                        |
-         |                        |
-+------------------+     +------------------+
-|    Web Server    |     |   Application    |
-|    (Nginx)       |     |    Server        |
-|   www.foobar.com |     |                  |
-|   /var/www/html  |     |    Your Code     |
-+------------------+     +------------------+
-```
 Diagram Link : https://imgur.com/LiCJD6j
 
 ### Explanations:
