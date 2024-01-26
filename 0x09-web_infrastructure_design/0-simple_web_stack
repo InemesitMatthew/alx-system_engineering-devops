@@ -1,54 +1,53 @@
-### Whiteboard Diagram:
+Whiteboard Diagram:
 
 The Diagram Link: https://imgur.com/p8VKnas
 
-Explanations:
-Server:
+What is a Server:
 
-A server is a device or software that provides functionality for other devices or programs, in this case, hosting the web infrastructure.
-Domain Name:
+Explanation: A server is a computer or software that provides services to other computers, like hosting a website.
+Example: In this task, the server is a computer hosting the website at www.foobar.com.
 
-The domain name (www.foobar.com) is the human-readable address used by users to access the website. It's configured to point to the server's IP (8.8.8.8) using DNS.
-DNS Record (www):
+Role of the Domain Name:
 
-The DNS record type for www in www.foobar.com is an A record pointing to the server's IP address (8.8.8.8).
-Web Server (Nginx):
+Explanation: The domain name is the human-readable address used to access a website, directing users to the server's IP.
+Example: www.foobar.com is the domain name pointing to the server at 8.8.8.8.
 
-The web server handles incoming HTTP requests from the user's browser. In this case, it's Nginx serving the website files from /var/www/html.
-Application Server:
+Type of DNS Record (www):
 
-The application server processes dynamic content and executes application logic. It works with your codebase to generate content dynamically.
-Database (MySQL):
+Explanation: The DNS record type for www in www.foobar.com is an A record, linking the domain to the server's IP.
+Example: A DNS A record translates www.foobar.com to 8.8.8.8.
 
-The database stores and manages the structured data needed for the application, ensuring efficient data retrieval and storage.
-Issues:
+Role of the Web Server (Nginx):
+
+Explanation: The web server (Nginx) handles incoming HTTP requests and serves static content like HTML and CSS.
+Example: Nginx serves files from /var/www/html to users' browsers.
+
+Role of the Application Server:
+
+Explanation: The application server processes dynamic content and executes application logic based on the codebase.
+Example: It generates personalized content on www.foobar.com.
+
+Role of the Database (MySQL):
+
+Explanation: The database (MySQL) stores structured data for the application, ensuring efficient data management.
+Example: It stores user information or product details.
+
+Server Communication with User's Computer:
+
+Explanation: The server communicates with the user's computer using the HTTP protocol over the internet.
+Example: When a user accesses www.foobar.com, the server uses HTTP to send web pages.
+
 Single Point of Failure (SPOF):
 
-The entire infrastructure relies on a single server, which can lead to downtime if the server fails.
+Explanation: SPOF means if one part fails, the entire system fails. In this case, relying on a single server poses a risk.
+Example: If the server at 8.8.8.8 goes down, www.foobar.com becomes inaccessible.
+
 Downtime During Maintenance:
 
-Restarting the web server for tasks like deploying new code can cause downtime, affecting user access.
-Scalability Issues:
+Explanation: Restarting the web server for tasks like deploying new code can lead to temporary downtime.
+Example: When updating the website, users might experience a brief period where it's not accessible.
 
-The current setup may struggle to handle a high volume of incoming traffic, limiting scalability.
+Cannot Scale with Incoming Traffic:
 
-
-In this example, the user is accessing a website hosted at www.foobar.com. The user's computer, which has a web browser, initiates the request to access the website. Let's break down the user's actions:
-
-User's Computer (Browser): The user opens their web browser and types in the URL www.foobar.com or clicks on a link pointing to that address.
-
-DNS Resolution: The browser sends a request to the DNS server to resolve the domain name www.foobar.com to an IP address. In this case, the DNS server returns the IP address 8.8.8.8.
-
-Connecting to Web Server: The browser then connects to the web server (Nginx) at the IP address 8.8.8.8, using the HTTP protocol.
-
-Web Server Processing: The web server receives the request and serves static content from the /var/www/html directory. This might include HTML, CSS, and JavaScript files.
-
-Application Server Interaction: If dynamic content is needed, the web server interacts with the application server. The application server executes the application logic using the provided codebase to generate dynamic content.
-
-Database Query (if needed): If the application requires data from the database, the application server queries the MySQL database to retrieve or update information.
-
-Response to User: The web server generates a response, combining static and dynamic content, and sends it back to the user's browser.
-
-User View: The user's browser renders the received content, displaying the website at www.foobar.com.
-
-In summary, the user is initiating a request to view the website, and the various components of the web infrastructure work together to process that request and deliver the web page to the user's browser.
+Explanation: The current setup may struggle to handle a high volume of incoming traffic, limiting scalability.
+Example: If many users try to access www.foobar.com simultaneously, the server may become overwhelmed.
