@@ -23,6 +23,7 @@
                    |                  |
                    +------------------+
 ```
+The Diagram Link: https://imgur.com/p8VKnas
 
 ### Explanations:
 
