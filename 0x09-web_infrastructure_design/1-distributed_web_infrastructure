@@ -1,56 +1,47 @@
-### Whiteboard Diagram:
+Whiteboard Diagram:
 
 Diagram Link : https://imgur.com/LiCJD6j
 
-Explanations:
+For Every Additional Element, Why You Are Adding It:
 
-Load Balancer (HAProxy):
+Explanation: Each element serves a specific purpose:
+Load Balancer: Distributes incoming traffic for better performance and reliability.
+Second Web Server: Enhances system capacity, allowing more simultaneous users.
+Database Replica: Provides data redundancy and improves read performance.
 
-Explanation: Added to distribute incoming traffic among multiple servers for improved performance and reliability.
-Distribution Algorithm: Configured with a Round Robin algorithm, directing each new request to the next server in line.
+Distribution Algorithm (Round Robin in HAProxy):
+
+Explanation: The load balancer uses a Round Robin algorithm, directing each new request to the next server in line.
+Example: If there are three servers (A, B, C), Round Robin sends requests like A → B → C → A → B...
 
 Active-Active Setup:
 
-Explanation: The load balancer enables an Active-Active setup, where both web servers actively handle requests simultaneously.
+Explanation: Both web servers actively handle requests simultaneously.
+Example: If a user accesses www.foobar.com, either web server A or B can respond, distributing the load evenly.
 
 Database Primary-Replica (Master-Slave) Cluster:
 
-Explanation: Setup for high availability and data redundancy. The primary node handles write operations, and the replica node mirrors the data for read operations.
+Explanation: Ensures high availability and data redundancy. Primary node handles writes, and replica node mirrors data for reads.
+Example: When a user updates their profile, the write operation goes to the primary node. When another user reads the profile, it can be served by the replica node.
 
-Difference between Primary and Replica Nodes:
+Difference Between Primary and Replica Nodes:
 
-Explanation: The primary node accepts write operations, updating the database. The replica node mirrors the data from the primary and handles read operations to distribute the load.
-Issues:
+Explanation:
+Primary Node: Handles write operations, updating the database with changes.
+Replica Node: Mirrors data from the primary and handles read operations to distribute the load.
+Example: If a new record is added, it goes to the primary. When a user queries data, it can be served by the replica, reducing the load on the primary.
 
 Single Points of Failure (SPOF):
 
-Explanation: Potential SPOFs include the load balancer and the DNS server, as their failure could impact the entire system.
+Explanation: Potential SPOFs include the load balancer and the DNS server. If they fail, the entire system may become inaccessible.
+Example: If the load balancer fails, incoming requests won't be distributed, leading to uneven server loads.
 
-Security Issues:
+Security Issues (No Firewall, No HTTPS):
 
-Explanation: Lack of firewall and HTTPS poses security risks. Implementing a firewall is crucial for controlling incoming and outgoing traffic, and HTTPS ensures secure communication.
+Explanation: Lack of firewall exposes the system to unauthorized access. Absence of HTTPS compromises data security during communication.
+Example: Without a firewall, malicious actors could attempt to access sensitive information. Without HTTPS, data transmitted between users and servers can be intercepted.
 
 No Monitoring:
 
-Explanation: The absence of monitoring tools means there's no visibility into the system's health and performance, making it challenging to identify and address issues proactively.
-
-In this example, the user is initiating a request to access the website www.foobar.com. Let's break down the user's actions in the context of the distributed web infrastructure:
-
-User's Computer (Browser): The user opens their web browser and types in the URL www.foobar.com or clicks on a link pointing to that address.
-
-DNS Resolution: The browser sends a request to the DNS server to resolve the domain name www.foobar.com to an IP address. In this case, the DNS server returns the IP address 8.8.8.8.
-
-Load Balancer Distribution: The user's request is received by the load balancer (HAProxy). The load balancer, configured with a Round Robin algorithm, directs the request to one of the available web servers (either A or B).
-
-Web Server Processing: The selected web server (e.g., Web Server A) processes the request, serving static content from /var/www/html or interacting with the application server and database for dynamic content.
-
-Application Server Interaction (if needed): If dynamic content is required, the web server interacts with the application server, executing application logic using the provided codebase to generate dynamic content.
-
-Database Query (if needed): If the application requires data from the database, the application server queries the MySQL database, which may involve both the primary and replica nodes.
-
-Response to User: The web server generates a response, combining static and dynamic content, and sends it back to the user's browser through the load balancer.
-
-User View: The user's browser renders the received content, displaying the website at www.foobar.com.
-
-In summary, the user's actions involve initiating a request, which is then processed and fulfilled by the distributed web infrastructure, utilizing load balancing to distribute requests among multiple servers for improved performance and reliability.
-
+Explanation: The absence of monitoring tools makes it challenging to identify and address issues proactively, risking downtime.
+Example: If there's a sudden increase in traffic, without monitoring, it may go unnoticed, impacting performance.
