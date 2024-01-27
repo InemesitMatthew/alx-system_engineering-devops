@@ -1,0 +1,40 @@
+Diagram Link: https://imgur.com/5kMdEx8
+
+
+3. Scale Up
+Introduction
+This project focuses on scaling up our web infrastructure to handle increased traffic and improve performance. The key components include an additional server, load balancer (HAProxy), and a distributed architecture for the web server, application server, and database.
+
+Components
+Additional Server:
+
+Why it's added: To enhance system capacity and distribute the load effectively.
+Example: If the existing server is reaching its limits, adding another server can handle more simultaneous users.
+Load-Balancer (HAProxy) Cluster:
+
+Why it's added: To distribute incoming traffic across multiple servers for improved performance and redundancy.
+Example: Like a traffic cop directing cars, the load balancer ensures even distribution of user requests among available servers.
+Split Components: Web Server, Application Server, Database:
+
+Why it's added: Separating components allows for better scalability, fault isolation, and easier maintenance.
+Example: In a restaurant, chefs specialize - one for preparing food (application server), one for serving (web server), and one managing ingredients (database).
+Configuration
+Ensure the HAProxy is configured as a cluster to achieve load balancing efficiently.
+
+Conclusion
+Scaling up the infrastructure improves the system's ability to handle more users and provides better reliability. Considerations such as load balancing and component separation contribute to a robust and scalable web architecture.
+
+Explanation Of The Diagram:
+Additional Server:
+
+We've added a second server (www B 8.8.8.9) to distribute the load and enhance system capacity.
+Load Balancer Cluster (HAProxy):
+
+Configured as a cluster to distribute incoming traffic between the two web servers for better load balancing.
+Split Components (Web Server, Application Server, Database):
+
+Web Servers (Nginx) handle incoming HTTP requests.
+Application Server processes dynamic content and executes application logic.
+Database (MySQL) stores and manages structured data.
+Conclusion:
+The whiteboard infrastructure illustrates a scalable setup where the load balancer efficiently distributes traffic among multiple web servers, and each component has its dedicated server for improved scalability and fault isolation.
