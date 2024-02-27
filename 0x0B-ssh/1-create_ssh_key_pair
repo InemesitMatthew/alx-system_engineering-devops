@@ -7,6 +7,3 @@
 # -b flag specifies the number of bits in the key
 # -N flag specifies the passphrase to protect the key
 ssh-keygen -t rsa -f school -b 4096 -N 'betty'
-
-# Output success message
-echo "RSA key pair created successfully."
