@@ -1,14 +1,12 @@
-# #!/usr/bin/env bash
-# # This script creates an RSA key pair.
-
-# # Generate an RSA key pair with 4096 bits
-# # -t flag specifies the key type (rsa)
-# # -f flag specifies the filename of the key pair
-# # -b flag specifies the number of bits in the key
-# # -N flag specifies the passphrase to protect the key
-# ssh-keygen -t rsa -f school -b 4096 -N 'betty'
-
 #!/usr/bin/env bash
-# a script that creates an RSA key pair.
+# This script creates an RSA key pair.
 
+# Generate an RSA key pair with 4096 bits
+# -t flag specifies the key type (rsa)
+# -f flag specifies the filename of the key pair
+# -b flag specifies the number of bits in the key
+# -N flag specifies the passphrase to protect the key
 ssh-keygen -t rsa -f school -b 4096 -N 'betty'
+
+# Output success message
+echo "RSA key pair created successfully."
